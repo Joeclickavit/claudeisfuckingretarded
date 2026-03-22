@@ -1,0 +1,357 @@
+.arcade {
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 9998;
+  overflow: hidden !important;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+  .arcade.loading {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    pointer-events: none;
+    background-attachment: inherit; }
+  .arcade__cab {
+    width: 1567px;
+    height: 1260px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    display: block;
+    -webkit-transition: transform 0s ease-in-out;
+    -moz-transition: transform 0s ease-in-out;
+    -o-transition: transform 0s ease-in-out;
+    -webkit-transition: transform 0s ease-in-out;
+    transition: transform 0s ease-in-out;
+    -moz-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    moz-transform-origin: 50% 0;
+    -o-transform-origin: 50% 0;
+    -ms-transform-origin: 50% 0;
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0; }
+    .arcade__cab.animate {
+      -webkit-transition: transform 1.5s ease-in-out;
+      -moz-transition: transform 1.5s ease-in-out;
+      -o-transition: transform 1.5s ease-in-out;
+      -webkit-transition: transform 1.5s ease-in-out;
+      transition: transform 1.5s ease-in-out; }
+    .kiosk .arcade__cab {
+      left: 0;
+      -moz-transform: translate(0, 0);
+      -o-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+      width: 100%;
+      height: 100%; }
+    .arcade__cab__element {
+      position: absolute;
+      display: block;
+      background-repeat: no-repeat;
+      background-size: contain;
+      pointer-events: none; }
+      .kiosk .arcade__cab__element:not(.arcade__cab__element--screen):not(.arcade__cab__element--screen-filter) {
+        display: none !important; }
+      .arcade__cab__element--outer {
+        width: 1567px;
+        height: 1260px;
+        background-repeat: no-repeat; }
+      .arcade__cab__element--outer-shadow-top {
+        left: 80px;
+        top: 480px;
+        width: 1408px;
+        height: 623px; }
+      .arcade__cab__element--screen, .arcade__cab__element--screen-filter {
+        overflow: hidden;
+        top: 550px;
+        left: 384px;
+        width: 800px;
+        height: 600px; }
+        .kiosk .arcade__cab__element--screen, .kiosk .arcade__cab__element--screen-filter {
+          top: 0%;
+          left: 0%;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          -moz-transform: translate(0%, 0%);
+          -o-transform: translate(0%, 0%);
+          -ms-transform: translate(0%, 0%);
+          -webkit-transform: translate(0%, 0%);
+          transform: translate(0%, 0%); }
+          .kiosk .arcade__cab__element--screen canvas, .kiosk .arcade__cab__element--screen-filter canvas {
+            width: 100% !important;
+            height: 100% !important; }
+      .arcade__cab__element--screen {
+        background-color: #090909;
+        pointer-events: inherit !important; }
+      .arcade__cab__element--screen-filter {
+        background-size: 100% 100%;
+        background-position: center;
+        top: 549px;
+        left: 383px;
+        width: 802px;
+        height: 602px; }
+      .arcade__cab__element--switch-sound {
+        width: 46px;
+        height: 58px;
+        bottom: 32px;
+        right: 208px;
+        cursor: pointer;
+        pointer-events: inherit; }
+        .arcade__cab__element--switch-sound div {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%; }
+          .arcade__cab__element--switch-sound div:nth-of-type(2n+1) {
+            opacity: 0;
+            filter: alpha(opacity=0); }
+          .arcade__cab__element--switch-sound div:nth-of-type(2n+0) {
+            opacity: 1;
+            filter: alpha(opacity=100); }
+        .arcade__cab__element--switch-sound.on div:nth-of-type(2n+1) {
+          opacity: 1;
+          filter: alpha(opacity=100); }
+        .arcade__cab__element--switch-sound.on div:nth-of-type(2n+0) {
+          opacity: 0;
+          filter: alpha(opacity=0); }
+      .arcade__cab__element--switch-power {
+        width: 65px;
+        height: 64px;
+        bottom: 28px;
+        left: 208px;
+        cursor: pointer;
+        pointer-events: inherit; }
+        .arcade__cab__element--switch-power div {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%; }
+          .arcade__cab__element--switch-power div:nth-of-type(2n+1) {
+            opacity: 0;
+            filter: alpha(opacity=0); }
+          .arcade__cab__element--switch-power div:nth-of-type(2n+0) {
+            opacity: 1;
+            filter: alpha(opacity=100); }
+        .arcade__cab__element--switch-power.on div:nth-of-type(2n+1) {
+          opacity: 1;
+          filter: alpha(opacity=100); }
+        .arcade__cab__element--switch-power.on div:nth-of-type(2n+0) {
+          opacity: 0;
+          filter: alpha(opacity=0); }
+      .arcade__cab__element--joystick {
+        width: 122px;
+        height: 157px;
+        right: 410px;
+        bottom: 0px;
+        -webkit-transform: translate3d(0, 0, 0);
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: 1000; }
+        .left .arcade__cab__element--joystick {
+          -moz-transform: rotate(-10deg) translateX(-26px);
+          -o-transform: rotate(-10deg) translateX(-26px);
+          -ms-transform: rotate(-10deg) translateX(-26px);
+          -webkit-transform: rotate(-10deg) translateX(-26px);
+          transform: rotate(-10deg) translateX(-26px); }
+        .right .arcade__cab__element--joystick {
+          -moz-transform: rotate(10deg) translateX(26px);
+          -o-transform: rotate(10deg) translateX(26px);
+          -ms-transform: rotate(10deg) translateX(26px);
+          -webkit-transform: rotate(10deg) translateX(26px);
+          transform: rotate(10deg) translateX(26px); }
+        .down .arcade__cab__element--joystick {
+          -moz-transform: translateY(20px) scale(1.04);
+          -o-transform: translateY(20px) scale(1.04);
+          -ms-transform: translateY(20px) scale(1.04);
+          -webkit-transform: translateY(20px) scale(1.04);
+          transform: translateY(20px) scale(1.04); }
+        .up .arcade__cab__element--joystick {
+          -moz-transform: translateY(10px) scale(0.9);
+          -o-transform: translateY(10px) scale(0.9);
+          -ms-transform: translateY(10px) scale(0.9);
+          -webkit-transform: translateY(10px) scale(0.9);
+          transform: translateY(10px) scale(0.9); }
+
+.crt-shutdown {
+  position: fixed;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  background-color: #000; }
+  .crt-shutdown.part1 {
+    opacity: 1;
+    filter: alpha(opacity=100); }
+  .crt-shutdown.done {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity 1.5s ease-in-out 0.2s;
+    -moz-transition: opacity 1.5s ease-in-out 0.2s;
+    -o-transition: opacity 1.5s ease-in-out 0.2s;
+    -webkit-transition: opacity 1.5s ease-in-out 0.2s;
+    transition: opacity 1.5s ease-in-out 0.2s;
+    pointer-events: none; }
+  .crt-shutdown__fill {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 150%;
+    height: 150%;
+    box-shadow: 0px 0px 30px white; }
+    .crt-shutdown__fill.part1 {
+      height: 10px;
+      width: 100%;
+      -webkit-transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+      -moz-transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+      -o-transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+      -webkit-transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+      transition: height 0.3s ease-in-out, width 0.3s ease-in-out; }
+    .crt-shutdown__fill.part2 {
+      height: 0vh;
+      width: 0%;
+      -webkit-transition: height 0.3s ease-out, width 0.3s ease-out;
+      -moz-transition: height 0.3s ease-out, width 0.3s ease-out;
+      -o-transition: height 0.3s ease-out, width 0.3s ease-out;
+      -webkit-transition: height 0.3s ease-out, width 0.3s ease-out;
+      transition: height 0.3s ease-out, width 0.3s ease-out; }
+  .crt-shutdown__gradient {
+    display: block;
+    position: absolute;
+    width: 10vmin;
+    height: 10vmin;
+    background: radial-gradient(circle, white 0%, rgba(255, 255, 255, 0.4) 3%, rgba(255, 255, 255, 0.26) 7%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0) 70%);
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    .crt-shutdown__gradient.part1 {
+      width: 20vmin;
+      height: 20vmin;
+      opacity: 1;
+      filter: alpha(opacity=100);
+      -webkit-transition: height 0.2s ease-in-out, width 0.2s ease-in-out, opacity 0.2s ease-in-out;
+      -moz-transition: height 0.2s ease-in-out, width 0.2s ease-in-out, opacity 0.2s ease-in-out;
+      -o-transition: height 0.2s ease-in-out, width 0.2s ease-in-out, opacity 0.2s ease-in-out;
+      -webkit-transition: height 0.2s ease-in-out, width 0.2s ease-in-out, opacity 0.2s ease-in-out;
+      transition: height 0.2s ease-in-out, width 0.2s ease-in-out, opacity 0.2s ease-in-out; }
+    .crt-shutdown__gradient.part2 {
+      width: 0vmin;
+      height: 0vmin;
+      -webkit-transition: height 0.4s ease-in, width 0.4s ease-in, opacity 0.3s ease-in-out;
+      -moz-transition: height 0.4s ease-in, width 0.4s ease-in, opacity 0.3s ease-in-out;
+      -o-transition: height 0.4s ease-in, width 0.4s ease-in, opacity 0.3s ease-in-out;
+      -webkit-transition: height 0.4s ease-in, width 0.4s ease-in, opacity 0.3s ease-in-out;
+      transition: height 0.4s ease-in, width 0.4s ease-in, opacity 0.3s ease-in-out; }
+  .crt-shutdown__icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: #cc0000;
+    font-family: 'Courier', monospace;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    -moz-transform: translate(-50%, -50%) scale(0);
+    -o-transform: translate(-50%, -50%) scale(0);
+    -ms-transform: translate(-50%, -50%) scale(0);
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0); }
+    .crt-shutdown__icon.part1 {
+      opacity: 1;
+      filter: alpha(opacity=100);
+      -moz-transform: translate(-35%, -52%) scale(1);
+      -o-transform: translate(-35%, -52%) scale(1);
+      -ms-transform: translate(-35%, -52%) scale(1);
+      -webkit-transform: translate(-35%, -52%) scale(1);
+      transform: translate(-35%, -52%) scale(1);
+      -webkit-transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      -moz-transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      -o-transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      -webkit-transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .crt-shutdown__icon.part2 {
+      -moz-transform: translate(-50%, -50%) scale(0);
+      -o-transform: translate(-50%, -50%) scale(0);
+      -ms-transform: translate(-50%, -50%) scale(0);
+      -webkit-transform: translate(-50%, -50%) scale(0);
+      transform: translate(-50%, -50%) scale(0);
+      -webkit-transition: all 0.4s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+      -moz-transition: all 0.4s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+      -o-transition: all 0.4s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+      -webkit-transition: all 0.4s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+      transition: all 0.4s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
+    .crt-shutdown__icon div:nth-of-type(2n+1) {
+      display: block;
+      width: 10px;
+      height: 10px;
+      width: 141px;
+      height: 105px; }
+      .crt-shutdown__icon div:nth-of-type(2n+1) img {
+        width: 100%;
+        height: 100%; }
+    .crt-shutdown__icon div:nth-of-type(2n+0) {
+      margin-top: 8px;
+      display: block;
+      padding-left: 10px; }
+
+html body.kiosk {
+  background-color: #000;
+  cursor: none !important; }
+
+html.arcade-active {
+  height: 100%;
+  overflow: hidden !important; }
+  html.arcade-active body {
+    overflow: hidden !important; }
+
+html.chs-demo {
+  height: 100%; }
+  html.chs-demo body {
+    width: 100%;
+    height: 100%;
+    min-height: 1260px; }
+    html.chs-demo body .dummy-site {
+      background-image: url("/assets/_html/polaroid-site.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+      display: block; }
+
+html.dev .arcade__cab__element--joystick, html.dev .arcade__cab__element--screen-filter {
+  display: none !important; }
+
+/*# sourceMappingURL=app.bundle.css.map*/
